@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<!-- header-start -->
+	<div class='header'>
+		<div class='header-container'>
+			<a href="" class='header-logo'>
+				<img src="img/logo.png" alt="">
+			</a>
+			<ul class='header-nav'>
+				<li class='city'>
+					<a href="">北京</a>
+				</li>
+				<li><a href="">买车</a></li>
+				<li><a href="">卖车</a></li>
+				<li>
+					<a href="">
+						<div class='shopping'></div>
+						代购
+					</a>
+					</li>
+				<li>
+					<a href="">
+						<div class='talking'></div>
+						论坛
+					</a>
+				</li>
+				<li><a href="">服务保障</a></li>
+			</ul>
+			<div class='header-app'>
+				<a href="">
+					<img src="img/top-app1.gif" alt="">
+					<img class='top-app-txt' src="img/top-app2.png" alt="">
+				</a>
+			</div>
+			<form class='header-search' action="">
+				<input class='txt' type="text" placeholder='请输入关键词，如：别克1.6L'>
+				<div class='btn'>
+					<div class='search-submit'></div>
+				</div>
+			</form>
+			<span class='header-tel'>
+				<div class='tel-img'></div>
+				<span class='telephone'>400-082-6105</span>
+			</span>
+		</div>
+	</div>
+	<!-- header-end -->
+
+	<!-- banner-start -->
+	<div id='banner' class='banner'>
+		<div id='big-pic' class='big-pic'>
+			<a href="">
+				<div class='item banner1'></div>
+			</a>
+			<a href="">
+				<div class='item banner2'></div>
+			</a>
+			<a href="">
+				<div class='item banner3'></div>
+			</a>
+			<a href="">
+				<div class='item banner4'></div>
+			</a>
+		</div>
+		<div class='small-pic'>
+			<div id='small-pic' class='banner-nav'>
+				<a href="">
+					<div class='banner-title'>公开课丨走进二手车评估师（下）</div>
+				</a>
+				<a href="">
+					<div class='banner-title'>买车靠谱 : 1年质保，14天可退</div>
+				</a>
+				<a href="">
+					<div class='banner-title'>卖车划算 : 没有黄牛赚差价</div>
+				</a>
+				<a href="">
+					<div class='banner-title'>分期购车流程指南</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- banner-end -->
+	<script>
+	//获取元素
+	var oBigpic = document.getElementById('big-pic');
+	var aBigpics = oBigpic.getElementsByTagName('a');
+	var oSmallpic = document.getElementById('small-pic');
+	var aSmallpics = oSmallpic.getElementsByClassName('banner-title')
+	// var oStrong = oDiv.getElementsByTagName('strong')[0];
+
+
+	//计数器
+	var now = 1;
+
+	//自动轮播
+	var timer = setInterval(fn,3000);
+
+
+	//初始化
+	for(var i=0;i<aSmallpics.length;i++)
+	{
+		aSmallpics[i].style.background = '#262626';
+		aSmallpics[i].style.color = '#ffffff';
+		aBigpics[i].style.display = 'none';
+	}
+	aSmallpics[0].style.background = '#100f12';
+	aSmallpics[0].style.color = '#fd521d';
+	aBigpics[0].style.display = 'block';
+	// oStrong.innerHTML = aBigpics[0].alt;
+
+	//手动播放
+	for(var i=0;i<aSmallpics.length;i++)
+	{
+		aSmallpics[i].index = i;
+		aSmallpics[i].onmouseover= function()
+		{
+			clearInterval(timer);
+			banner(this);
+		};
+		aSmallpics[i].onmouseout = function()
+		{
+			now = this.index + 1;
+			timer = setInterval(fn,3000);
+		};
+	}
+
+	//方法
+	function banner(obj)
+	{
+		for(var i=0;i<aSmallpics.length;i++)
+		{
+			aSmallpics[i].style.background = '#262626';
+			aSmallpics[i].style.color = '#ffffff';
+			aBigpics[i].style.display = 'none';
+		}
+		obj.style.background = '#100f12';
+		obj.style.color = '#fd521d';
+		aBigpics[obj.index].style.display = 'block';
+		// oStrong.innerHTML = aBigpics[obj.index].alt;
+	}
+
+	//计时器原理
+	function fn()
+	{
+		if(now >= aSmallpics.length)
+		{
+			now = 0;
+		}
+		banner(aSmallpics[now]);
+		now++;
+	}
+	</script>
+
+	<!-- main-start -->
+	<div class='main'>
+		<div class='wrapper'>
+			<div class='buy-logo-box'>
+				<a href="">
+					<div class='buy-logo'></div>
+					<div class='buy-logo-text'>1年/2玩公里质保</div>
+				</a>
+			</div>
+			<div class='buy'>
+				<div class='buy-nav'>
+					<ul>
+						<li class='brand-icon'></li>
+						<li><a href="">大众</a></li>
+						<li><a href="">宝马</a></li>
+						<li><a href="">奥迪</a></li>
+						<li><a href="">丰田</a></li>
+						<li><a href="">奔驰</a></li>
+						<li><a href="">本田</a></li>
+						<li><a href="">别克</a></li>
+						<li><a href="">福特</a></li>
+						<li><a href="">日产</a></li>
+						<li><a href="">马自达</a></li>
+						<li><a href="">雪佛兰</a></li>
+						<li><a href="">更多</a></li>
+					</ul>
+					<ul>
+						<li class='price-icon'></li>
+						<li><a href="">3万一下</a></li>
+						<li><a href="">3-5万</a></li>
+						<li><a href="">5-10万</a></li>
+						<li><a href="">10-15万</a></li>
+						<li><a href="">15-20万</a></li>
+						<li><a href="">20-30万</a></li>
+						<li><a href="">30-60万</a></li>
+						<li><a href="">60万</a></li>
+					</ul>
+					<ul>
+						<li class='tag-icon'></li>
+						<li><a href="">SUV</a></li>
+						<li><a href="">商务车</a></li>
+						<li><a href="">跑车</a></li>
+						<li><a href="">急售</a></li>
+						<li><a href="">准新车</a></li>
+						<li><a href="">超值</a></li>
+					</ul>
+				</div>
+				<div class='buy-download'>
+					<a href="">
+						<div class='buy-img'></div>
+						<ul class='but-download-text'>
+							<li>
+								特价好车，欣赏车源，抢先知道
+								<i></i>
+							</li>
+						</ul>
+					</a>
+				</div>
+			</div>
+			<div class='sales-logo-box'>
+				<a href="">
+					<div class='buy-logo'></div>
+					<div class='buy-logo-text'>平均七天出售</div>
+				</a>
+			</div>
+			<div class='sales'>
+				<div class='sell-guide'>
+					<div class='sales-title'>
+						<div class='sales-title1'>快速卖车</div>
+						<div class='sales-title2'>
+							已有
+							<span>77242</span>
+							人提交卖车
+						</div>
+					</div>
+					<label class='brand' for="">
+						<span class='brand-form'>车辆品牌</span>
+					</label>
+					<div class='sales-input'>
+						<label class='control-group' for="">
+							<input type="text" placeholder='手机号必填'>
+						</label>
+						<button id='sell_submit' class='btn-base btn-defult'>帮我卖车</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='product'>
+			<div class='bbs-wrapper'>
+				<a href="">
+					<div class='model'>
+						<div class='model-title'>分期购车</div>
+						<div class='model-time'>0首付，门槛低，放款快</div>
+						<div class='model-img' style='background: url(img/car2.png);'></div>
+					</div>
+				</a>
+				<a href="">
+					<div class='model'>
+						<div class='model-title'>知心帮买</div>
+						<div class='model-time'>帮您锁定心仪车辆</div>
+						<div class='model-img' style='background: url(img/car.png);'></div>
+					</div>
+				</a>
+				<a href="">
+					<div class='model'>
+						<div class='model-title'>APP专项礼包</div>
+						<div class='model-time'>猴年红包，扫码就送</div>
+						<div class='model-img' style='background: url(img/car3.png);'></div>
+					</div>
+				</a>
+				<div class='rr-talk'>
+					<div class='talk-title'>
+						<a href="">
+							论坛
+							<div class='talk-title-img'></div>
+						</a>
+						<a href="">
+							<div class='talk-more'>更多</div>
+						</a>
+					</div>
+					<ul class='talk-article'>
+						<li>
+							<a href="">
+								<div class='talk-bbs-title'>福利：必戳→来发帖！每天送你3000元奖品</div>
+								<img src="img/yue.jpg" alt="">
+								<div class='talk-name'>蓝一枚</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<div class='talk-bbs-title'>福利：必戳→来发帖！每天送你3000元奖品</div>
+								<img src="img/cat.jpg" alt="">
+								<div class='talk-name'>特拉福</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<div class='talk-bbs-title'>福利：必戳→来发帖！每天送你3000元奖品</div>
+								<img src="img/robot.gif" alt="">
+								<div class='talk-name'>ysm758</div>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<div class='talk-bbs-title'>福利：必戳→来发帖！每天送你3000元奖品</div>
+								<img src="img/super.jpg" alt="">
+								<div class='talk-name'>车车</div>
+							</a>
+						</li>
+					</ul>
+					<ul class='talk-button'>
+						<a href="">
+							<li>卖车&评估</li>
+						</a>
+						<a href="">
+							<li>买车&养车</li>
+						</a>
+						<a href="">
+							<li>购车推荐</li>
+						</a>
+						<a href="">
+							<li>车友帮助</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class='car'>
+			<div id='car-list-title' class='car-list-title'>
+				<ul>
+					<a href="">
+						<li>
+							特价好车
+							<div></div>
+						</li>
+					</a>
+					<a href="">
+						<li>
+							5万内精选
+							<div></div>
+						</li>
+					</a>
+					<a href="">
+						<li>
+							SUV
+							<div></div>
+						</li>
+					</a>
+					<a href="">
+						<li>
+							急售
+							<div></div>
+						</li>
+					</a>
+					<a href="">
+						<li>
+							大众情结
+							<div></div>
+						</li>
+					</a>
+					<a href="">
+						<li class='lastli'>
+							更多
+						</li>
+					</a>
+				</ul>
+			</div>
+			<div id='car-list-box' class='car-list-box'>
+				<div class='list'>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/1.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/2.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/3.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/4.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/5.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/6.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/7.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/8.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					</a>
+				</div>
+				<div class='list'>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/1.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/2.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/3.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/4.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/5.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/6.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/7.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/8.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					</a>
+				</div>
+				<div class='list'>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/1.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/2.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/3.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/4.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/5.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/6.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/7.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/8.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					</a>
+				</div>
+				<div class='list'>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/1.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/2.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/3.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/4.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/5.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/6.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/7.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/8.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					</a>
+				</div>
+				<div class='list'>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/1.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/2.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/3.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/4.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/5.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/6.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/7.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					<a class='car-item' href="">
+						<div class='img-background'>
+							<img class='img-lazy' src="img/8.jpg" alt="">
+						</div>
+						<div>
+							<p class='car-title'>日产-天籁 2011款 20.L XL舒适版</p>
+							<p>2013年02月
+								<em class='separator'>/</em>
+								8.43万公里
+							</p>
+							<div class='price'>
+								13.00
+								<span>万</span>
+							</div>
+							<div class='new-price'>
+								新车含税
+								<span>21.69</span>
+								万
+							</div>
+						</div>
+					</a>
+					</a>
+				</div>
+			</div>
+			<a class='car-more btn-base btn-big' href="">查看更多</a>
+		</div>
+		<script>
+		function getClass(obj,aClass)
+		{
+			if(obj.getElementsByClassName)
+			{
+				return obj.getElementsByClassName;
+			}
+			else
+			{
+				var aEle = document.getElementsByTagName('*');
+				var result = [];
+				for(var i=0;i<aEle.length;i++)
+				{
+					if(aEle[i].className == aClass)
+					{
+						result.push(aEle[i]);
+					}
+				}
+				return result;
+			}
+		}
+		var oTitle = document.getElementById('car-list-title');
+		var aLi = oTitle.getElementsByTagName('li');
+		var aDiv = oTitle.getElementsByTagName('div');
+		var oBox = document.getElementById('car-list-box');
+		var aBox = oBox.getElementsByClassName('list');
+
+		//	初始化
+		for(var i=0;i<aLi.length;i++)
+		{
+			aLi[i].style.background = '#ffffff';
+			aLi[i].style.color = '#000';
+			aDiv[i].style.display = 'none';
+			aBox[i].style.display = 'none';
+		}
+		aLi[0].style.background = '#fd521d';
+		aLi[0].style.color = '#ffffff';
+		aDiv[0].style.display = 'block';
+		aBox[0].style.display = 'block';
+
+
+		//选项卡
+		for(var i=0;i<aLi.length;i++)
+		{
+			aLi[i].index = i;
+			aLi[i].onmouseover = function()
+			{
+				for(var i=0;i<aLi.length;i++)
+				{
+					aLi[i].style.background = '#ffffff';
+					aLi[i].style.color = '#000';
+					aDiv[i].style.display = 'none';
+					aBox[i].style.display = 'none';
+				}
+				this.style.background = '#fd521d';
+				this.style.color = '#ffffff';
+				aDiv[this.index].style.display = 'block';
+				aBox[this.index].style.display = 'block';
+			}
+		}
+		</script>
+		<div class='category-top'></div>
+		<div class='category-carousel'>
+			<div class='container category-width'>
+				<div class='category-title'>
+					车主故事&nbsp;
+					<a href="">
+						<span>更多</span>
+					</a>
+				</div>
+				<div id='category_panel'>
+					<button class='category-next'></button>
+					<div class='category-controls'>
+						<div class='category-page'>
+							<span></span>
+						</div>
+						<div class='category-page'>
+							<span></span>
+						</div>
+						<div class='category-page'>
+							<span></span>
+						</div>
+					</div>
+					<button class='category-prev'></button>
+				</div>
+				<div class='category-owl'></div>
+			</div>
+			<div class='media-reports'>
+				<div class='media-reports-title'>
+					媒体报道
+					<div class='more'></div>
+				</div>
+				<ul>
+					<a href="">
+						<li>
+							<div class='img-video'></div>
+							央视：人人车创立二手车交易新模式
+						</li>
+					</a>
+					<a href="">
+						<li>
+							腾讯：人人车或腾讯8500万美元投资
+						</li>
+					</a>
+					<a href="">
+						<li>
+							搜狐：腾讯8500万美元投资人人车
+						</li>
+					</a>
+					<a href="">
+						<li>
+							、新车评严宇鹏：互联网二手车革新体验
+						</li>
+					</a>
+					<a href="">
+						<li>
+							虎嗅：人人车凭什么固执5亿美元
+						</li>
+					</a>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- main-end -->
+
+	<!-- footer-start -->
+	<div class='footer'>
+		<div class='footer-top'>
+			<div class='footer-baozhang'>
+				<div class='baozhang1'></div>
+				<div class='baozhang2'></div>
+				<div class='baozhang3'></div>
+				<div class='baozhang4'></div>
+				<div class='baozhang5'></div>
+			</div>
+			<div class='container clearfixnew'>
+				<div class='row-fluid'>
+					<div class='link-section'>
+						<ul>
+							<li>
+								<div class='title'>关于我们</div>
+								<a href="">关于我们</a>
+								<a href="">联系我们</a>
+								<a href="">加入我们</a>
+							</li>
+							<li>
+								<div class='title'>交易流程</div>
+								<a href="">卖车流程</a>
+								<a href="">买车流程</a>
+								<a href="">异地购车</a>
+							</li>
+							<li>
+								<div class='title'>新收购车指南</div>
+								<a href="">新车VS二手车</a>
+								<a href="">选车注意事项</a>
+								<a href="">过户手续办理</a>
+							</li>
+						</ul>
+					</div>
+					<div class='app-section'>
+						<img src="img/app1.png" alt="">
+						<div class='title'>人人车APP</div>
+						<p>下载APP，随时随地，秒杀好车<br>优质个人二手车，有保障，更放心</p>
+					</div>
+					<div class='tel-section'>
+						<div class='tel'>
+							<p class='tel-log'></p>
+							<div class='title'>
+								<span class='telephone_header'>400-082-6105</span>
+							</div>
+						</div>
+						<div class='ask'>
+							<p>免费咨询（咨询、建议、投诉）</p>
+							<p>周一至周六9:00-19:00</p>
+						</div>
+						<div class='sns'>
+							<a id='footer-weixin' href="">
+								<img class='popover' src="" alt="">
+								<em class='weixin'></em>
+								<p>官方微信</p>
+							</a>
+							<a id='footer-weixin' href="">
+								<em class='weibo'></em>
+								<p>官方微博</p>
+							</a>
+							<a id='footer-weixin' href="">
+								<em class='luntan'></em>
+								<p>官方论坛</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='footer-center'>
+			<div class='container'>
+				<div class='row-fuild-height'>
+					<ul id='nav' class='nav nav-tabs'>
+						<li><a class='active' href="">热门城市</a></li>
+						<li><a href="">热门品牌</a></li>
+						<li><a href="">热门车系</a></li>
+						<li><a href="">友情链接</a></li>
+					</ul>
+				</div>
+				<div class='tab-content link-content'>
+					<div class='tab-pane'>
+						<a href="">北京</a>
+						<a href="">上海</a>
+						<a href="">广州</a>
+						<a href="">武汉</a>
+						<a href="">重庆</a>
+						<a href="">哈尔滨</a>
+						<a href="">青岛</a>
+						<a href="">沈阳</a>
+						<a href="">乌鲁木齐</a>
+					</div>
+					<div class='tab-pane'>
+						<a href="">北京</a>
+						<a href="">上海</a>
+						<a href="">广州</a>
+						<a href="">武汉</a>
+						<a href="">重庆</a>
+						<a href="">哈尔滨</a>
+						<a href="">青岛</a>
+						<a href="">沈阳</a>
+						<a href="">乌鲁木齐</a>
+					</div>
+					<div class='tab-pane'>
+						<a href="">北京</a>
+						<a href="">上海</a>
+						<a href="">广州</a>
+						<a href="">武汉</a>
+						<a href="">重庆</a>
+						<a href="">哈尔滨</a>
+						<a href="">青岛</a>
+						<a href="">沈阳</a>
+						<a href="">乌鲁木齐</a>
+					</div>
+					<div class='tab-pane'>
+						<a href="">北京</a>
+						<a href="">上海</a>
+						<a href="">广州</a>
+						<a href="">武汉</a>
+						<a href="">重庆</a>
+						<a href="">哈尔滨</a>
+						<a href="">青岛</a>
+						<a href="">沈阳</a>
+						<a href="">乌鲁木齐</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='footer-bottom'>
+			<div class='container'>
+				<span>Copyright © 2016, renrenche.com, All Rights Reserved 京公网安备 11010802015302号 京ICP备 14030440号</span>
+			</div>
+		</div>
+	</div>
+	<script>
+	var oNav = document.getElementById('nav');
+	var aA= oNav.getElementsByTagName('a');
+	var aTab = document.getElementsByClassName('tab-pane');
+
+	// for(var i=0;i<aA.length;i++)
+	// {
+		
+	// }
+	</script>
+	<!-- footer-end -->
+
+	<div class='common-share'>
+		<div class='common-share-tel-in'></div>
+		<div class='common-share-tel'>
+			<div class='common-share-tel-img'></div>
+			<div class='common-share-tel-text'>免费电话</div>
+		</div>
+		<div class='common-share-app share-selected'></div>
+		<a href=""></a>
+		<div class='qr-tooltips app-download-img'></div>
+		<div class='common-man'></div>
+	</div>
+</body>
+</html>
